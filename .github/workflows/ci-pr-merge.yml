@@ -2,7 +2,7 @@ name: ci-pr-merge
 
 on:
   pull_request:
-    branches: [main]
+    branches: [master]
 env:
   CI: true
   workflow_dispatch: true
