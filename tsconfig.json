@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "types": ["node"],
+        "target": "es6",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "removeComments": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": true,
+        "resolveJsonModule": true,
+        "outDir": "lib/",
+        "rootDir": "src/",
+        "declaration": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true
+    },
+
+    "compileOnSave": false
+}
