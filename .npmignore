@@ -1,0 +1,14 @@
+# ignore
+*
+# include
+!/lib/interfaces/**
+!/lib/reporter/**
+!/lib/testRunData/**
+!/lib/utils/**
+!/lib/Helper.js
+!/lib/Helper.d.ts
+!/lib/index.js
+!/lib/index.d.ts
+!/lib/tests/playwright.config.d.ts
+!/lib/tests/playwright.config.js
+!/lib/scripts/**
