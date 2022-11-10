@@ -1,0 +1,26 @@
+name: publish-package
+on:
+  push:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+
+
+  release_package:
+    needs: master_tests
+
+    name: Release package
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install packages
+        run: yarn install
+
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+
+
