@@ -7,9 +7,7 @@ on:
 
 jobs:
 
-
   release_package:
-    needs: master_tests
 
     name: Release package
     runs-on: ubuntu-latest
