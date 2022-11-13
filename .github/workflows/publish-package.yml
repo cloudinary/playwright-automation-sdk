@@ -1,7 +1,7 @@
 name: publish-package
 on:
   push:
-    branches: [ publish-package ]
+    branches: [ master ]
 
   workflow_dispatch:
 
