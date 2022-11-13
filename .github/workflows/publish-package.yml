@@ -6,8 +6,45 @@ on:
   workflow_dispatch:
 
 jobs:
+  master_tests:
+    name: Run e2e tests
+
+  steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js v14.18.1
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.18.1
+
+    - name: Install packages
+      run: yarn install
+
+    - name: Run tests
+      run: yarn test
+
+    - name: Publish HTML report
+      if: always()
+      uses: peaceiris/actions-gh-pages@v3.7.3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: playwright-report/
+        destination_dir: ${{ github.run_number }}/
+        keep_files: true
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
+
+    - name: Update E2E report status
+      if: always()
+      uses: Sibz/github-status-action@v1.1.6
+      with:
+        authToken: ${{ secrets.GITHUB_TOKEN }}
+        context: 'Test report'
+        state: 'success'
+        sha: ${{ github.event.pull_request.head.sha }}
+        target_url: https://cloudinary.github.io/playwright-automation-sdk/${{ github.run_number }}
 
   release_package:
+    needs: master_tests
 
     name: Release package
     runs-on: ubuntu-latest
@@ -16,6 +53,14 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install packages
         run: yarn install
+
+    - name: run standard version
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          yarn release
+        - name: push changes
+          run: git push --follow-tags origin master
 
       - uses: JS-DevTools/npm-publish@v1
         with:
