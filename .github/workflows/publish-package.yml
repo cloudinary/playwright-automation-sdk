@@ -2,8 +2,9 @@ name: publish-package
 on:
   push:
     branches: [ master ]
-
-  workflow_dispatch:
+env:
+  CI: true
+  workflow_dispatch: true
 
 jobs:
   master_tests:
