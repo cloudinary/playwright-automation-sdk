@@ -36,13 +36,13 @@ jobs:
       - name: Install packages
         run: yarn install
 
-    - name: run standard version
+      - name: run standard version
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           yarn release
-        - name: push changes
-          run: git push --follow-tags origin master
+      - name: push changes
+        run: git push --follow-tags origin master
 
       - uses: JS-DevTools/npm-publish@v1
         with:
