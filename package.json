@@ -1,6 +1,6 @@
 {
   "name": "playwright-automation-sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "bin": {
@@ -35,6 +35,7 @@
     "prepack": "yarn lint && tsc && cp -r ./src/scripts ./lib",
     "pretest": " yarn lint",
     "test": "playwright test -c src/tests/playwright.config.ts",
+    "release": "standard-version",
     "report:html": "npx playwright show-report"
   },
   "husky": {
