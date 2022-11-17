@@ -1,7 +1,7 @@
 name: publish-package
 on:
   push:
-    branches: [ code-owner ]
+    branches: [ master ]
 env:
   CI: true
   workflow_dispatch:
