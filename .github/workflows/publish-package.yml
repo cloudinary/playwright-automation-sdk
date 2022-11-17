@@ -1,10 +1,12 @@
 name: publish-package
+
+env:
+  CI: true
+
 on:
   push:
     branches: [ master ]
-env:
-  CI: true
-  workflow_dispatch: true
+  workflow_dispatch:
 
 jobs:
   master_tests:
