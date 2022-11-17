@@ -4,7 +4,7 @@ on:
     branches: [ code-owner ]
 env:
   CI: true
-  workflow_dispatch: true
+  workflow_dispatch:
 
 jobs:
   master_tests:
