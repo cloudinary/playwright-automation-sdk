@@ -45,7 +45,7 @@ jobs:
           git config user.email ${{ secrets.EMAIL }}
           yarn release
       - name: push changes
-        run: git push --follow-tags origin master
+        run: git push -f --follow-tags origin master
 
       - uses: JS-DevTools/npm-publish@v1
         with:
