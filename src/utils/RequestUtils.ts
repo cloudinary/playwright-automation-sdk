@@ -43,7 +43,7 @@ export namespace RequestUtils {
    * @param url request end point, It will be linked to base url from config file
    * @param options - options for request(optional)
    */
-  export async function getRequest(request: APIRequestContext, url: string, options?: IGetOptions): Promise<any> {
+  export async function getRequest(request: APIRequestContext, url: string, options?: IGetOptions) {
     Reporter.debug(prepareLogMessage(RequestType.GET, url.toString(), options));
     return request.get(url, options);
   }
