@@ -5,7 +5,7 @@ Currently, support api testing only. Include html and console report
 
 # Getting starting
 - create folder to locate your new automation tests project ( mkdir/ or finder)
-- navigate to the project folder in the terminal and run 'yan' command - new dev project will be created 
+- navigate to the project folder in the terminal and run 'yarn' command - new dev project will be created 
 - open the project in your IDE
 - add `playwright-automation-sdk` dependency to your `package.json` file with the latest version number for example :
  
