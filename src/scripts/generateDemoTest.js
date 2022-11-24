@@ -5,7 +5,7 @@ const fs = require('fs');
  * Create a sample test for test project
  * ====================================================================================================================
  */
-const testContent = "import { RequestUtils, Reporter  } from 'playwright-api-testing';\n" +
+const testContent = "import { RequestUtils, Reporter  } from 'playwright-automation-sdk';\n" +
     "import { expect, test } from '@playwright/test';\n" +
     "\n" +
     "test.describe('GET request', () => {\n" +
