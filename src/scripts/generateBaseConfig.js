@@ -9,7 +9,7 @@
 const fs = require('fs');
 
 const configContent = "import dotenv from 'dotenv';\n" +
-    "import {config} from \"playwright-api-testing\";\n" +
+    "import {config} from \"playwright-automation-sdk\";\n" +
     "/**\n" +
     " * Read environment variables from file.\n" +
     " * https://github.com/motdotla/dotenv\n" +
