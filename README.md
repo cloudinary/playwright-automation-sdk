@@ -4,12 +4,25 @@ Currently, support api testing only. Include html and console report
 
 
 # Getting starting
-- add `playwright-automation-sdk` dependency to your `package.json` file
+- create folder to locate your new automation tests project ( mkdir/ or finder)
+- navigate to the project folder in the terminal and run 'yarn' command - new dev project will be created 
+- open the project in your IDE
+- add `playwright-automation-sdk` dependency to your `package.json` file with the latest version number for example :
+ 
+"name": "my_package",
+"version": "1.0.0",
+"dependencies": {
+  "playwright-automation-sdk": "^0.0.5",
+  "another_dep": "~2.2.0"
+}
+In terminal:
 - execute `yarn` to install a new dependency
 - execute `node ./node_modules/.bin/init-test-data` to bring necessary files for test run
+In your IDE:
 - add next script to your package.json:
   `- "test": "playwright test",`
   ` - "report:html": "playwright show-report"`
+In Terminal:
 - execute `yarn test`
 
 # Project structure:
